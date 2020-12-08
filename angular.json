@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Bugdet-planner"
+  "defaultProject": "Bugdet-planner",
+  "cli": {
+    "analytics": "270c1324-4604-49c7-b05a-f83d78f3bbc5"
+  }
 }
