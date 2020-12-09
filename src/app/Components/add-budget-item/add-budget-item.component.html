@@ -1,0 +1,9 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    name="budgetItem"
+    id="new-budgetitem"
+    [(ngModel)]="budgetItemName"
+  />
+  <input type="submit" value="+" />
+</form>

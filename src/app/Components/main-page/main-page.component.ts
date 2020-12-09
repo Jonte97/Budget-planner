@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/Models/Category';
 import { Budget } from '../../Models/Budget';
+import { BudgetService } from '../../services/budget.service';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -7,36 +9,17 @@ import { Budget } from '../../Models/Budget';
 })
 export class MainPageComponent implements OnInit {
   budget: Budget;
-  constructor() {
+  constructor(private budgetService: BudgetService) {
     this.budget = new Budget();
   }
 
   ngOnInit(): void {
-    this.budget = {
-      id: 1,
-      name: 'Cool budget',
-      income: 1000,
-      outgoing: 0,
-      categories: [
-        {
-          name: 'Housing',
-          budgetItems: [
-            {
-              name: 'Rent',
-              value: 200,
-            },
-          ],
-        },
-        {
-          name: 'Cats',
-          budgetItems: [
-            {
-              name: 'Food for Big Floof',
-              value: 3,
-            },
-          ],
-        },
-      ],
-    };
+    //!Gets testbudget
+    this.budget = this.budgetService.getBudget();
+  }
+
+  addCategory(category: Category) {
+    const newCategory = this.budgetService.addCategory(category);
+    this.budget.categories.push(newCategory);
   }
 }

@@ -1,4 +1,5 @@
-<div>
+<div id="main-page">
+  <app-add-category (addCategory)="addCategory($event)"></app-add-category>
   <app-category
     *ngFor="let category of budget.categories"
     [category]="category"

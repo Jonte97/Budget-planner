@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BudgetItem } from 'src/app/Models/Budget-item';
 import { Category } from 'src/app/Models/Category';
+import { BudgetService } from 'src/app/services/budget.service';
 
 @Component({
   selector: 'app-category',
@@ -9,9 +10,14 @@ import { Category } from 'src/app/Models/Category';
 })
 export class CategoryComponent implements OnInit {
   @Input() category: Category;
-  constructor() {
+  constructor(private budgetService: BudgetService) {
     this.category = new Category();
   }
 
   ngOnInit(): void {}
+
+  addBudgetItem(BudgetItem: BudgetItem) {
+    const newBudgetItem = this.budgetService.addBudgetItem(BudgetItem);
+    this.category.budgetItems.push(newBudgetItem);
+  }
 }
