@@ -9,13 +9,24 @@ import { BudgetService } from '../../services/budget.service';
 })
 export class MainPageComponent implements OnInit {
   budget: Budget;
+  activeCategory: Category;
+  categoryIndex: number; //! Rename this?
   constructor(private budgetService: BudgetService) {
     this.budget = new Budget();
+    this.activeCategory = new Category();
+    this.categoryIndex = 0;
   }
 
   ngOnInit(): void {
     //!Gets testbudget
     this.budget = this.budgetService.getBudget();
+    this.activeCategory = this.budget.categories[this.categoryIndex];
+  }
+
+  nextCategory(newIndex: number) {
+    this.categoryIndex = newIndex;
+    console.log(newIndex);
+    this.activeCategory = this.budget.categories[this.categoryIndex];
   }
 
   addCategory(category: Category) {

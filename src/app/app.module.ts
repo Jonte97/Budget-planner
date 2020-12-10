@@ -9,6 +9,7 @@ import { CategoryComponent } from './Components/category/category.component';
 import { AddCategoryComponent } from './Components/add-category/add-category.component';
 import { FormsModule } from '@angular/forms';
 import { AddBudgetItemComponent } from './Components/add-budget-item/add-budget-item.component';
+import { NextCategoryComponent } from './Components/next-category/next-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { AddBudgetItemComponent } from './Components/add-budget-item/add-budget-
     CategoryComponent,
     AddCategoryComponent,
     AddBudgetItemComponent,
+    NextCategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
