@@ -16,8 +16,16 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //* Adds budgetitem
   addBudgetItem(BudgetItem: BudgetItem) {
-    const newBudgetItem = this.budgetService.addBudgetItem(BudgetItem);
+    const newBudgetItem = this.budgetService.addBudgetItem(
+      BudgetItem,
+      this.category.budgetItems
+    );
     this.category.budgetItems.push(newBudgetItem);
+  }
+  //* Removes budgetItem
+  removeBudgetItem(budgetItem: BudgetItem) {
+    this.budgetService.removeBudgetItem(budgetItem, this.category.budgetItems);
   }
 }

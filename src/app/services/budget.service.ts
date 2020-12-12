@@ -21,10 +21,12 @@ export class BudgetService {
           name: 'Housing',
           budgetItems: [
             {
+              id: 1,
               name: 'Rent',
               value: 200,
             },
             {
+              id: 2,
               name: 'Loan',
               value: 500,
             },
@@ -35,6 +37,7 @@ export class BudgetService {
           name: 'Cats',
           budgetItems: [
             {
+              id: 1,
               name: 'Food for Big Floof',
               value: 3,
             },
@@ -46,7 +49,7 @@ export class BudgetService {
   //* Add category
   addCategory(category: Category, list: Category[]): Category {
     const result = {
-      id: list[list.length - 1].id + 1,
+      id: list.length ? list[list.length - 1].id + 1 : 1,
       name: category.name,
       budgetItems: [],
     };
@@ -54,8 +57,9 @@ export class BudgetService {
   }
 
   //* Add a budgetItem
-  addBudgetItem(budgetItem: BudgetItem): BudgetItem {
+  addBudgetItem(budgetItem: BudgetItem, list: BudgetItem[]): BudgetItem {
     const result = {
+      id: list.length ? list[list.length - 1].id + 1 : 1,
       name: budgetItem.name,
       value: 0,
     };
@@ -68,5 +72,12 @@ export class BudgetService {
       if (category.id === list[i].id) list.splice(i, 1);
     }
     return list;
+  }
+
+  //*Remove budgetItem
+  removeBudgetItem(budgetItem: BudgetItem, list: BudgetItem[]) {
+    for (let i = 0; i < list.length; i++) {
+      if (budgetItem.id === list[i].id) list.splice(i, 1);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetItem } from 'src/app/Models/Budget-item';
 
 @Component({
@@ -8,9 +8,14 @@ import { BudgetItem } from 'src/app/Models/Budget-item';
 })
 export class BudgetItemComponent implements OnInit {
   @Input() budgetItem: BudgetItem;
+  @Output() removeItem: EventEmitter<any> = new EventEmitter();
   constructor() {
     this.budgetItem = new BudgetItem();
   }
 
   ngOnInit(): void {}
+
+  onSubmit() {
+    this.removeItem.emit(this.budgetItem);
+  }
 }
