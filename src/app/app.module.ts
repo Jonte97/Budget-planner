@@ -28,7 +28,7 @@ import { IncomeComponent } from './Components/income/income.component';
     CategoryNavbarComponent,
     IncomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -66,4 +66,9 @@ export class MainPageComponent implements OnInit {
     current ? (this.incomePage = false) : (this.incomePage = true);
     this.update();
   }
+
+  //* Set income
+  setIncome(newIncome:number){
+    this.budgetService.setIncome(newIncome, this.budget);
+  }
 }

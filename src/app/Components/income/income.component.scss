@@ -1,100 +1,140 @@
-.category-wrapper {
+.income-wrapper {
   border: 2px solid grey;
   border-radius: 15px;
-  padding: 2em;
+  padding: 1em 2em 2em 2em;
 }
-@import url("https://fonts.googleapis.com/css?family=Raleway");
 
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+
+* {
+  box-sizing: border-box;
+}
 html,
 body {
-  display: flex;
-  font-family: "Raleway", sans-serif;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  background: #efefef;
+}
+@mixin epic-sides() { // https://codepen.io/MichaelArestad/pen/qltuk
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 0;
+        left: -5000px;
+        height: 100%;
+        width: 15000px;
+        z-index: -1;
+        @content;
+    }
+}
+.row {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  text-align: center;
+  
+  &:first-child {
+    padding: 40px 30px;
+  }
+  &:nth-child(2),
+  &:nth-child(8),
+  &:nth-child(10){
+    background: #134A46;
+  }
+  &:nth-child(3),
+  &:nth-child(7) {
+  }
+  &:nth-child(4),
+  &:nth-child(6) {
+    background: #7AB893;
+  }
+  &:nth-child(5) {
+    background: #B2E3AF;
+  }
+  
+  span {
+    position: relative;
+    display: inline-block;
+    margin: 30px 10px;
+  }
 }
 
-input {
-  height: 50px;
-  width: 300px;
-  font-size: 32px;
-  outline: none;
-  border: 1px solid black;
-  position: relative;
-  font-family: "Raleway", sans-serif;
-}
-
-#text {
-  display: none;
-  position: relative;
-  height: 52px;
-  font-size: 32px;
-  width: 302px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  outline: none;
-  z-index: -1;
-  padding: 1;
-  line-height: 52px;
-}
-
-#text:before {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 52px;
-  left: 0;
-  background: black;
-  transform-origin: top;
-}
-
-#text > span:first-of-type {
-  margin-left: 1.6px;
-}
-
-#face {
-  position: absolute;
-  left: -130px;
-  margin-bottom: 48px;
-  height: 120px;
-  width: 120px;
-  background: white;
-  border: 1px solid black;
-  z-index: -2;
-}
-
-#eye {
-  position: relative;
-  height: 5px;
-  width: 5px;
-  top: 25%;
-  border-radius: 50%;
-  background: black;
+.balloon {
+  // As suggested by https://twitter.com/dbox/status/365888496486985728
   display: inline-block;
-}
+  width: 215px;
+  padding: 10px 0 10px 15px;
+  font-family: "Open Sans", sans;
+  font-weight: 400;
+  color: #377D6A;
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-indent: 60px; // Arbitrary.
+  transition: all .3s ease-in-out;
+  
+  &::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+  }
 
-#eye:first-of-type {
-  left: 33%;
+  + label {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    bottom: 8px;
+    padding: 5px 15px;
+    color: #032429;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(19,74,70,0);
+    transition: all .3s ease-in-out;
+    border-radius: 3px;
+    background: rgba(122,184,147,0);
+    
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      top: 100%;
+      left: 50%;
+      margin-left: -3px;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 3px solid rgba(122,184,147,0);
+      transition: all .3s ease-in-out;
+    }
+  }
 }
-
-#eye:nth-child(2) {
-  left: 66%;
-}
-
-#mouth {
-  position: relative;
-  top: 45%;
-  width: 33%;
-  height: 1%;
-  background: black;
-  left: 60%;
-  transform: translateX(-50%);
-}
-
-button {
-  margin-left: 10px;
-  width: 120px;
-  height: 50px;
-  font-family: "Raleway", sans-serif;
+.balloon:focus,
+.balloon:active {
+  color: #377D6A;
+  text-indent: 0;
+  background: #fff;
+  
+  &::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  + label {
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(19,74,70,.4);
+    background: rgba(122,184,147,1);
+    transform: translateY(-40px);
+    
+    &:after {
+      border-top: 4px solid rgba(122,184,147,1);
+    }
+  }
 }

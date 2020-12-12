@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Budget } from '../Models/Budget';
 import { BudgetItem } from '../Models/Budget-item';
 import { Category } from '../Models/Category';
 
@@ -13,7 +14,7 @@ export class BudgetService {
     return {
       id: 1,
       name: 'Cool budget',
-      income: 1000,
+      income: 0,
       outgoing: 0,
       categories: [
         {
@@ -83,4 +84,9 @@ export class BudgetService {
 
   //* SetOutGoing
   setOutGoing() {}
+
+  //*SetIncome
+  setIncome(newIncome:number, budget:Budget) {
+    budget.income = newIncome;
+  }
 }

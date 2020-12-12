@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { BudgetItem } from 'src/app/Models/Budget-item';
 
 @Component({
   selector: 'app-add-category',
