@@ -1,8 +1,21 @@
 <div id="main-page">
   <app-add-category (addCategory)="addCategory($event)"></app-add-category>
+  <app-remove-category
+    [activeCategory]="activeCategory"
+    (removeCategory)="removeActiceCategory($event)"
+  ></app-remove-category>
   <app-category [category]="activeCategory"></app-category>
-  <app-next-category
-    [index]="categoryIndex"
-    (nextCategory)="nextCategory($event)"
-  ></app-next-category>
+  <div *ngIf="categoryIndex != 0">
+    <app-previous-category
+      [index]="categoryIndex"
+      (previousCategory)="setActiveCategory($event)"
+    ></app-previous-category>
+  </div>
+  <div *ngIf="categoryIndex != categoryCount">
+    <app-next-category
+      [index]="categoryIndex"
+      [categoryCount]="categoryCount"
+      (nextCategory)="setActiveCategory($event)"
+    ></app-next-category>
+  </div>
 </div>

@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './Components/main-page/main-page.component';
 import { BudgetItemComponent } from './Components/budget-item/budget-item.component';
-import { CategoryComponent } from './Components/category/category.component';
-import { AddCategoryComponent } from './Components/add-category/add-category.component';
+import { CategoryComponent } from './Components/CategoryComponents/category/category.component';
+import { AddCategoryComponent } from './Components/CategoryComponents/add-category/add-category.component';
 import { FormsModule } from '@angular/forms';
 import { AddBudgetItemComponent } from './Components/add-budget-item/add-budget-item.component';
-import { NextCategoryComponent } from './Components/next-category/next-category.component';
+import { NextCategoryComponent } from './Components/CategoryComponents/next-category/next-category.component';
+import { PreviousCategoryComponent } from './Components/CategoryComponents/previous-category/previous-category.component';
+import { RemoveCategoryComponent } from './Components/CategoryComponents/remove-category/remove-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,8 @@ import { NextCategoryComponent } from './Components/next-category/next-category.
     AddCategoryComponent,
     AddBudgetItemComponent,
     NextCategoryComponent,
+    PreviousCategoryComponent,
+    RemoveCategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

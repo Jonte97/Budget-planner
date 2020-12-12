@@ -7,18 +7,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class NextCategoryComponent implements OnInit {
   @Input() index: number;
+  @Input() categoryCount: number;
   @Output() nextCategory: EventEmitter<any> = new EventEmitter();
-  currentIndex: number;
   constructor() {
-    this.currentIndex = 0;
     this.index = 0;
+    this.categoryCount = 0;
   }
 
   ngOnInit(): void {}
 
   onSubmit() {
     const newIndex = this.index + 1;
-    console.log(newIndex);
     this.nextCategory.emit(newIndex);
   }
 }
