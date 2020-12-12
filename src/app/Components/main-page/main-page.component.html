@@ -1,19 +1,36 @@
 <div id="main-page">
   <app-category-navbar [categories]="budget.categories"></app-category-navbar>
   <app-add-category (addCategory)="addCategory($event)"></app-add-category>
-  <app-remove-category
-    *ngIf="activeCategoryIndex > 0"
-    [activeCategory]="activeCategory"
-    (removeCategory)="removeActiceCategory($event)"
-  ></app-remove-category>
-  <app-category [category]="activeCategory"></app-category>
-  <div *ngIf="categoryIndex != 0">
+
+  <div *ngIf="!incomePage">
+    <app-remove-category
+      *ngIf="activeCategoryIndex > 0"
+      [activeCategory]="activeCategory"
+      (removeCategory)="removeActiceCategory($event)"
+    ></app-remove-category>
+    <app-category [category]="activeCategory"></app-category>
+  </div>
+  <div *ngIf="incomePage">
+    <app-income></app-income>
+  </div>
+  <div *ngIf="categoryIndex === 0 && incomePage">
+    <form (ngSubmit)="setIncomePage(incomePage)">
+      <input type="submit" value=">" />
+    </form>
+  </div>
+  <div *ngIf="categoryIndex === 0 && !incomePage">
+    <form (ngSubmit)="setIncomePage(incomePage)">
+      <input type="submit" value="<" />
+    </form>
+  </div>
+
+  <div *ngIf="categoryIndex > 0 && !incomePage">
     <app-previous-category
       [index]="categoryIndex"
       (previousCategory)="setActiveCategory($event)"
     ></app-previous-category>
   </div>
-  <div *ngIf="categoryIndex != activeCategoryIndex">
+  <div *ngIf="categoryIndex != activeCategoryIndex && !incomePage">
     <app-next-category
       [index]="categoryIndex"
       [categoryCount]="activeCategoryIndex"

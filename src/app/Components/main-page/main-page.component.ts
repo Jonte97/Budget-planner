@@ -13,12 +13,13 @@ export class MainPageComponent implements OnInit {
   activeCategory: Category;
   categoryIndex: number; //! Rename this?
   activeCategoryIndex: number;
-
+  incomePage: boolean;
   constructor(private budgetService: BudgetService) {
     this.budget = new Budget();
     this.activeCategory = new Category();
     this.categoryIndex = 0;
     this.activeCategoryIndex = 0;
+    this.incomePage = true;
   }
 
   ngOnInit(): void {
@@ -56,6 +57,13 @@ export class MainPageComponent implements OnInit {
       this.budget.categories
     );
     this.setActiveCategory(0);
+    this.update();
+  }
+
+  //* Set IncomePage
+  setIncomePage(current: boolean) {
+    console.log(current);
+    current ? (this.incomePage = false) : (this.incomePage = true);
     this.update();
   }
 }

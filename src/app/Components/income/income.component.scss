@@ -1,0 +1,100 @@
+.category-wrapper {
+  border: 2px solid grey;
+  border-radius: 15px;
+  padding: 2em;
+}
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+html,
+body {
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+input {
+  height: 50px;
+  width: 300px;
+  font-size: 32px;
+  outline: none;
+  border: 1px solid black;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+}
+
+#text {
+  display: none;
+  position: relative;
+  height: 52px;
+  font-size: 32px;
+  width: 302px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  outline: none;
+  z-index: -1;
+  padding: 1;
+  line-height: 52px;
+}
+
+#text:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 52px;
+  left: 0;
+  background: black;
+  transform-origin: top;
+}
+
+#text > span:first-of-type {
+  margin-left: 1.6px;
+}
+
+#face {
+  position: absolute;
+  left: -130px;
+  margin-bottom: 48px;
+  height: 120px;
+  width: 120px;
+  background: white;
+  border: 1px solid black;
+  z-index: -2;
+}
+
+#eye {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  top: 25%;
+  border-radius: 50%;
+  background: black;
+  display: inline-block;
+}
+
+#eye:first-of-type {
+  left: 33%;
+}
+
+#eye:nth-child(2) {
+  left: 66%;
+}
+
+#mouth {
+  position: relative;
+  top: 45%;
+  width: 33%;
+  height: 1%;
+  background: black;
+  left: 60%;
+  transform: translateX(-50%);
+}
+
+button {
+  margin-left: 10px;
+  width: 120px;
+  height: 50px;
+  font-family: "Raleway", sans-serif;
+}

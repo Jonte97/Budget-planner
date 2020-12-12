@@ -13,6 +13,7 @@ import { NextCategoryComponent } from './Components/CategoryComponents/next-cate
 import { PreviousCategoryComponent } from './Components/CategoryComponents/previous-category/previous-category.component';
 import { RemoveCategoryComponent } from './Components/CategoryComponents/remove-category/remove-category.component';
 import { CategoryNavbarComponent } from './Components/CategoryComponents/category-navbar/category-navbar.component';
+import { IncomeComponent } from './Components/income/income.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { CategoryNavbarComponent } from './Components/CategoryComponents/categor
     PreviousCategoryComponent,
     RemoveCategoryComponent,
     CategoryNavbarComponent,
+    IncomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

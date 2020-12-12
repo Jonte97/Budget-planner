@@ -80,4 +80,7 @@ export class BudgetService {
       if (budgetItem.id === list[i].id) list.splice(i, 1);
     }
   }
+
+  //* SetOutGoing
+  setOutGoing() {}
 }
