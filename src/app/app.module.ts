@@ -12,6 +12,7 @@ import { AddBudgetItemComponent } from './Components/add-budget-item/add-budget-
 import { NextCategoryComponent } from './Components/CategoryComponents/next-category/next-category.component';
 import { PreviousCategoryComponent } from './Components/CategoryComponents/previous-category/previous-category.component';
 import { RemoveCategoryComponent } from './Components/CategoryComponents/remove-category/remove-category.component';
+import { CategoryNavbarComponent } from './Components/CategoryComponents/category-navbar/category-navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { RemoveCategoryComponent } from './Components/CategoryComponents/remove-
     NextCategoryComponent,
     PreviousCategoryComponent,
     RemoveCategoryComponent,
+    CategoryNavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

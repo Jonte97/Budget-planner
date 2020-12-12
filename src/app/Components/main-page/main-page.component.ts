@@ -12,24 +12,24 @@ export class MainPageComponent implements OnInit {
 
   activeCategory: Category;
   categoryIndex: number; //! Rename this?
-  categoryCount: number;
+  activeCategoryIndex: number;
 
   constructor(private budgetService: BudgetService) {
     this.budget = new Budget();
     this.activeCategory = new Category();
     this.categoryIndex = 0;
-    this.categoryCount = 0;
+    this.activeCategoryIndex = 0;
   }
 
   ngOnInit(): void {
     //!Gets testbudget
     this.budget = this.budgetService.getBudget();
     this.activeCategory = this.budget.categories[this.categoryIndex];
-    this.categoryCount = this.budget.categories.length - 1;
+    this.activeCategoryIndex = this.budget.categories.length - 1;
   }
   //*Updates site
   update() {
-    this.categoryCount = this.budget.categories.length - 1;
+    this.activeCategoryIndex = this.budget.categories.length - 1;
   }
 
   //* Set active category

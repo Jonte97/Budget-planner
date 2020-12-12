@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/Models/Category';
-import { BudgetService } from 'src/app/services/budget.service';
 
 @Component({
   selector: 'app-remove-category',

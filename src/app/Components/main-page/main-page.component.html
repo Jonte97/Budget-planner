@@ -1,6 +1,8 @@
 <div id="main-page">
+  <app-category-navbar [categories]="budget.categories"></app-category-navbar>
   <app-add-category (addCategory)="addCategory($event)"></app-add-category>
   <app-remove-category
+    *ngIf="activeCategoryIndex > 0"
     [activeCategory]="activeCategory"
     (removeCategory)="removeActiceCategory($event)"
   ></app-remove-category>
@@ -11,10 +13,10 @@
       (previousCategory)="setActiveCategory($event)"
     ></app-previous-category>
   </div>
-  <div *ngIf="categoryIndex != categoryCount">
+  <div *ngIf="categoryIndex != activeCategoryIndex">
     <app-next-category
       [index]="categoryIndex"
-      [categoryCount]="categoryCount"
+      [categoryCount]="activeCategoryIndex"
       (nextCategory)="setActiveCategory($event)"
     ></app-next-category>
   </div>
