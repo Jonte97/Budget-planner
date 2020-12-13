@@ -2,14 +2,12 @@
   <h2>Income</h2>
   <div class="income">
     <label for="income">Income</label>
-    <input (ngModelChange)="onChange($event)" [(ngModel)]="income" type="text" name="income" id="income" />
-    <div class="row">
-      <span>
-        <input class="balloon" id="state" type="text" placeholder="Liquid, solid, gaseous..." /><label for="state">Salary</label>
-      </span>
-      <span>
-        <input class="balloon" id="state" type="text" placeholder="Liquid, solid, gaseous..." /><label for="state">Other income</label>
-      </span>
-    </div>
+    <input
+      (ngModelChange)="onChange($event)"
+      [(ngModel)]="income"
+      type="text"
+      name="income"
+      id="income"
+    />
   </div>
 </section>

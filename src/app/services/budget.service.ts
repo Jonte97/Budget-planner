@@ -86,7 +86,15 @@ export class BudgetService {
   setOutGoing() {}
 
   //*SetIncome
-  setIncome(newIncome:number, budget:Budget) {
+  setIncome(newIncome: number, budget: Budget) {
     budget.income = newIncome;
+  }
+
+  getCategoryById(id: number, list: Category[]) {
+    let category = <Category>list.find((obj) => {
+      return obj.id === id;
+    });
+    console.log(category);
+    return category;
   }
 }

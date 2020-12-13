@@ -1,9 +1,13 @@
 <form class="form" (ngSubmit)="onSubmit()">
-  <input
-    type="text"
-    name="categoryName"
-    id="new-category"
-    [(ngModel)]="categoryName"
-  />
-  <input type="submit" value="Submit" class="btn" />
+  <label class="custom-field">
+    <input
+      required
+      type="text"
+      name="categoryName"
+      id="new-category"
+      [(ngModel)]="categoryName"
+    />
+    <span class="placeholder">Add category</span>
+  </label>
+  <input type="submit" value="Add" class="btn" />
 </form>

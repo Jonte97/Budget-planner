@@ -48,6 +48,8 @@ export class MainPageComponent implements OnInit {
     );
     this.budget.categories.push(newCategory);
     this.update();
+    this.incomePage = false;
+    this.setActiveCategory(this.budget.categories.length - 1);
   }
 
   //* Removes category from categorylist
@@ -68,7 +70,19 @@ export class MainPageComponent implements OnInit {
   }
 
   //* Set income
-  setIncome(newIncome:number){
+  setIncome(newIncome: number) {
     this.budgetService.setIncome(newIncome, this.budget);
+  }
+
+  //* Navigate to
+  setActiveCategoryById(id: number) {
+    this.activeCategory = this.budgetService.getCategoryById(
+      id,
+      this.budget.categories
+    );
+    this.categoryIndex = this.budget.categories.indexOf(this.activeCategory);
+
+    this.incomePage = false;
+    this.update();
   }
 }

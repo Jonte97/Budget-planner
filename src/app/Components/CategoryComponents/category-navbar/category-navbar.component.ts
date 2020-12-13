@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/Models/Category';
 
 @Component({
@@ -8,10 +8,15 @@ import { Category } from 'src/app/Models/Category';
 })
 export class CategoryNavbarComponent implements OnInit {
   @Input() categories: Category[];
+  @Output() navigateTo: EventEmitter<any> = new EventEmitter();
 
   constructor() {
     this.categories = [];
   }
 
   ngOnInit(): void {}
+
+  navigate(id: number) {
+    this.navigateTo.emit(id);
+  }
 }

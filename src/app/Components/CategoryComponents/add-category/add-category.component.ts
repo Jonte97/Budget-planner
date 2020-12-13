@@ -20,5 +20,6 @@ export class AddCategoryComponent implements OnInit {
       name: this.categoryName,
     };
     this.addCategory.emit(category);
+    this.categoryName = '';
   }
 }

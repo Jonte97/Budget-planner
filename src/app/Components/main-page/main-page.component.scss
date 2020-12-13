@@ -1,9 +1,10 @@
 #main-page {
-  padding: 0 20% 0 20%;
+  border: 2px solid grey;
+  border-radius: 15px;
+  padding: 2em;
 }
-#nav-buttons{
-  div{
+#nav-buttons {
+  div {
     display: flex;
-
   }
 }
