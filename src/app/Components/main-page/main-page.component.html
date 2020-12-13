@@ -16,18 +16,18 @@
         ></app-remove-category>
       </div>
       <div id="nav-buttons">
-        <form
+        <input
           *ngIf="categoryIndex === 0 && incomePage"
-          (ngSubmit)="setIncomePage(incomePage)"
-        >
-          <input type="submit" value=">" />
-        </form>
-        <form
+          (click)="setIncomePage(incomePage)"
+          type="submit"
+          value=">"
+        />
+        <input
           *ngIf="categoryIndex === 0 && !incomePage"
-          (ngSubmit)="setIncomePage(incomePage)"
-        >
-          <input type="submit" value="<" />
-        </form>
+          (click)="setIncomePage(incomePage)"
+          type="submit"
+          value="<"
+        />
         <app-previous-category
           *ngIf="categoryIndex > 0 && !incomePage"
           [index]="categoryIndex"

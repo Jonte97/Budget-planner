@@ -3,3 +3,11 @@
 * {
   font-family: "Roboto";
 }
+
+#nav-buttons {
+  display: flex;
+  justify-content: center;
+  input {
+    margin: 1em;
+  }
+}

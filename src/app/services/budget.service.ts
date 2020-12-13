@@ -78,7 +78,7 @@ export class BudgetService {
     const result = {
       id: list.length ? list[list.length - 1].id + 1 : 1,
       name: budgetItem.name,
-      value: 0,
+      value: budgetItem.value,
     };
     return result;
   }

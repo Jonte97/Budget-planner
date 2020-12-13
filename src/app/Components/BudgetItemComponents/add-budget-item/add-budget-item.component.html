@@ -1,9 +1,18 @@
-<form class="form" (ngSubmit)="onSubmit()">
-  <input
-    type="text"
-    name="budgetItem"
-    id="new-budgetitem"
-    [(ngModel)]="budgetItemName"
-  />
-  <input type="submit" value="+" />
-</form>
+<div id="add-expense">
+  <form class="form" (ngSubmit)="onSubmit()">
+    <label class="custom-field" id="name">
+      <input
+        required
+        type="text"
+        name="budgetItem"
+        [(ngModel)]="budgetItemName"
+      />
+      <span class="placeholder">Add expense...</span>
+    </label>
+    <label class="custom-field" id="cost">
+      <input required type="text" name="budgetItem" [(ngModel)]="value" />
+      <span class="placeholder">Cost</span>
+    </label>
+    <input type="submit" value="Add" class="btn-add btn-primary" />
+  </form>
+</div>
