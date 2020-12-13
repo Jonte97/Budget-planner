@@ -9,6 +9,7 @@ import { Category } from 'src/app/Models/Category';
 export class CategoryNavbarComponent implements OnInit {
   @Input() categories: Category[];
   @Output() navigateTo: EventEmitter<any> = new EventEmitter();
+  @Output() setIncomePage: EventEmitter<any> = new EventEmitter();
 
   constructor() {
     this.categories = [];
@@ -18,5 +19,8 @@ export class CategoryNavbarComponent implements OnInit {
 
   navigate(id: number) {
     this.navigateTo.emit(id);
+  }
+  navigateIncome() {
+    this.setIncomePage.emit();
   }
 }

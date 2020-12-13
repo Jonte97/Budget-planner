@@ -1,10 +1,20 @@
 #main-page {
   border: 2px solid grey;
   border-radius: 15px;
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
 }
 #nav-buttons {
+  display: inline-flex;
   div {
-    display: flex;
+    justify-content: space-between;
+  }
+}
+#category-head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+
+  #category-name {
+    font-size: 24px;
   }
 }

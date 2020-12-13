@@ -1,5 +1,6 @@
 <nav id="category-navbar">
   <ul>
+    <li><a (click)="navigateIncome()">Income</a></li>
     <li *ngFor="let category of categories">
       <a (click)="navigate(category.id)"> {{ category.name }} </a>
     </li>

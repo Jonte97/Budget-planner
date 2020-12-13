@@ -52,9 +52,13 @@
   background-size: 100% 0.15em, 100% 0.1em, 100%;
 }
 
-.btn {
+.btn-add {
   background: #222;
   border: none;
   color: white;
-  height: 41px;
+  height: 45px;
+  padding: 10px;
+}
+.btn-add:hover {
+  cursor: pointer;
 }

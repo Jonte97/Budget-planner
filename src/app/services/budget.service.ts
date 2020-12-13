@@ -44,6 +44,22 @@ export class BudgetService {
             },
           ],
         },
+        {
+          id: 3,
+          name: 'Car',
+          budgetItems: [
+            {
+              id: 1,
+              name: 'Gas',
+              value: 500,
+            },
+            {
+              id: 2,
+              name: 'Repairs',
+              value: 1000,
+            },
+          ],
+        },
       ],
     };
   }

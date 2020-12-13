@@ -19,7 +19,7 @@ export class MainPageComponent implements OnInit {
     this.activeCategory = new Category();
     this.categoryIndex = 0;
     this.activeCategoryIndex = 0;
-    this.incomePage = true;
+    this.incomePage = false;
   }
 
   ngOnInit(): void {
@@ -64,8 +64,14 @@ export class MainPageComponent implements OnInit {
 
   //* Set IncomePage
   setIncomePage(current: boolean) {
-    console.log(current);
-    current ? (this.incomePage = false) : (this.incomePage = true);
+    if (current) {
+      this.incomePage = false;
+    } else {
+      this.incomePage = true;
+      this.categoryIndex = 0;
+      this.activeCategoryIndex = 1;
+      this.setActiveCategory(0);
+    }
     this.update();
   }
 
