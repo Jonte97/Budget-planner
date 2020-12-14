@@ -2,12 +2,16 @@
   <div class="category">
     <app-add-budget-item (addBudgetItem)="addBudgetItem($event)">
     </app-add-budget-item>
-
-    <app-budget-item
-      *ngFor="let budgetItem of category.budgetItems"
-      [budgetItem]="budgetItem"
-      (removeItem)="removeBudgetItem($event)"
-    >
-    </app-budget-item>
+    <div class="category-content">
+      <div>
+        <app-budget-item
+          *ngFor="let budgetItem of category.budgetItems"
+          [budgetItem]="budgetItem"
+          (removeItem)="removeBudgetItem($event)"
+        >
+        </app-budget-item>
+      </div>
+      <app-doughnut></app-doughnut>
+    </div>
   </div>
 </section>

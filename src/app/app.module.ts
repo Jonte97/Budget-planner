@@ -14,6 +14,9 @@ import { PreviousCategoryComponent } from './Components/CategoryComponents/previ
 import { RemoveCategoryComponent } from './Components/CategoryComponents/remove-category/remove-category.component';
 import { CategoryNavbarComponent } from './Components/CategoryComponents/category-navbar/category-navbar.component';
 import { IncomeComponent } from './Components/income/income.component';
+import { DoughnutComponent } from './Components/Graph/doughnut/doughnut.component';
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +30,9 @@ import { IncomeComponent } from './Components/income/income.component';
     RemoveCategoryComponent,
     CategoryNavbarComponent,
     IncomeComponent,
+    DoughnutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule,],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ChartsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
