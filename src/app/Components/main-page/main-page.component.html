@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
   <div>
     <app-add-category (addCategory)="addCategory($event)"></app-add-category>
@@ -17,16 +18,18 @@
       </div>
       <div id="nav-buttons">
         <input
+          class="btn btn-primary"
           *ngIf="categoryIndex === 0 && incomePage"
           (click)="setIncomePage(incomePage)"
           type="submit"
           value=">"
         />
         <input
+          class="btn btn-secondary"
           *ngIf="categoryIndex === 0 && !incomePage"
           (click)="setIncomePage(incomePage)"
           type="submit"
-          value="<"
+          value="Income"
         />
         <app-previous-category
           *ngIf="categoryIndex > 0 && !incomePage"
@@ -43,6 +46,7 @@
 
       <div *ngIf="!incomePage">
         <app-category [category]="activeCategory"></app-category>
+        <app-doughnut [budget]="budget"></app-doughnut>
       </div>
       <div *ngIf="incomePage">
         <app-income (setIncome)="setIncome($event)"></app-income>

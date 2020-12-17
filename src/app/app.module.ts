@@ -16,6 +16,7 @@ import { CategoryNavbarComponent } from './Components/CategoryComponents/categor
 import { IncomeComponent } from './Components/income/income.component';
 import { DoughnutComponent } from './Components/Graph/doughnut/doughnut.component';
 import { ChartsModule } from 'ng2-charts';
+import { HeaderComponent } from './Components/HeaderComponents/header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ChartsModule } from 'ng2-charts';
     CategoryNavbarComponent,
     IncomeComponent,
     DoughnutComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ChartsModule],
   providers: [],
