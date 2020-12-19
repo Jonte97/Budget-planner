@@ -6,7 +6,7 @@
         required
         type="text"
         name="expense"
-        id="new-category"
+        (input)="onChange(budgetItem.value)"
       />
       <span class="placeholder">{{ budgetItem.name }}</span>
     </label>

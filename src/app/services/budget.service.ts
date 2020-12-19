@@ -110,7 +110,6 @@ export class BudgetService {
     let category = <Category>list.find((obj) => {
       return obj.id === id;
     });
-    console.log(category);
     return category;
   }
 }

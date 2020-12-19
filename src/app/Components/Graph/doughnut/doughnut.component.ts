@@ -8,6 +8,7 @@ import {
   MultiDataSet,
 } from 'ng2-charts';
 import { Budget } from 'src/app/Models/Budget';
+import { PercentPerCategory } from 'src/app/Models/PercentPerCategory';
 import { GraphService } from 'src/app/services/graph.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class DoughnutComponent implements OnInit {
   @Input() budget: Budget;
 
   budgetOutgoing: number;
+  percentagePerCategory: PercentPerCategory[];
 
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -32,9 +34,18 @@ export class DoughnutComponent implements OnInit {
   constructor(private graphService: GraphService) {
     this.budget = new Budget();
     this.budgetOutgoing = 0;
+    this.percentagePerCategory = [
+      { name: '1', percent: 20 },
+      { name: '2', percent: 80 },
+    ];
+    // this.pieChartData = this.percentagePerCategory.map((a) => a.percent);
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.budgetOutgoing = this.graphService.getTotalCost(
+      this.budget.categories
+    );
+  }
 }

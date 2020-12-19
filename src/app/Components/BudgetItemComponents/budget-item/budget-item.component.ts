@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Observable, timer } from 'rxjs';
 import { BudgetItem } from 'src/app/Models/Budget-item';
 
 @Component({
@@ -14,7 +15,9 @@ export class BudgetItemComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
+  onChange(value: number) {
+    console.log(value);
+  }
   onSubmit() {
     this.removeItem.emit(this.budgetItem);
   }
