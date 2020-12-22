@@ -1,6 +1,9 @@
 <section class="category-wrapper">
   <div class="category">
-    <app-add-budget-item (addBudgetItem)="addBudgetItem($event)">
+    <app-add-budget-item
+      id="add-budgetitem"
+      (addBudgetItem)="addBudgetItem($event)"
+    >
     </app-add-budget-item>
     <div class="category-content">
       <div>
@@ -11,6 +14,7 @@
         >
         </app-budget-item>
       </div>
+      <app-doughnut [budget]="budget"></app-doughnut>
     </div>
   </div>
 </section>

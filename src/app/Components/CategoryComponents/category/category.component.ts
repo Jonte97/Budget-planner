@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Budget } from 'src/app/Models/Budget';
 import { BudgetItem } from 'src/app/Models/Budget-item';
 import { Category } from 'src/app/Models/Category';
 import { BudgetService } from 'src/app/services/budget.service';
@@ -10,7 +11,9 @@ import { BudgetService } from 'src/app/services/budget.service';
 })
 export class CategoryComponent implements OnInit {
   @Input() category: Category;
+  @Input() budget: Budget;
   constructor(private budgetService: BudgetService) {
+    this.budget = new Budget();
     this.category = new Category();
   }
 

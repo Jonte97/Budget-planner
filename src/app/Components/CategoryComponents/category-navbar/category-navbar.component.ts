@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Budget } from 'src/app/Models/Budget';
 import { Category } from 'src/app/Models/Category';
 
 @Component({

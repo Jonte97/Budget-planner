@@ -31,6 +31,16 @@ export class BudgetService {
               name: 'Loan',
               value: 500,
             },
+            {
+              id: 3,
+              name: 'Rent',
+              value: 200,
+            },
+            {
+              id: 4,
+              name: 'Loan',
+              value: 500,
+            },
           ],
         },
         {
